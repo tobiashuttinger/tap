@@ -1,0 +1,12 @@
+{ 
+    "name": "Tap", 
+    "short_name": "Tap", 
+    "description": "A minimalistic BPM (Beats Per Minute) tap app.",
+    "start_url": "https://tap.gehirngulasch.net", 
+    "display": "standalone", 
+    "icons": [{ 
+        "src": "img/tap.png", 
+        "sizes": "512x512", 
+        "type": "image/png" 
+    }] 
+}

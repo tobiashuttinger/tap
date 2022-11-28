@@ -1,0 +1,133 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+
+/* ==========================================================================
+   Tapapp main styles
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #000;
+        --text-color: #fff;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.infocontainer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 .5rem;
+}
+
+.tapnotice {
+    font-size: 1.3rem;
+}
+
+.bpmcount {
+    font-size: clamp(4.5rem, 10vw, 9rem);
+}
