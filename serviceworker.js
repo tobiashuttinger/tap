@@ -1,6 +1,7 @@
 const cacheName = 'tap-offline-cache';
-var urlsToCache = [
+const urlsToCache = [
     '/',
+    '/manifest.json',
     '/js/main.js',
     '/css/main.css',
     '/img/tap.png'
@@ -16,11 +17,14 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        fetch(event.request).catch(() => {
-            caches.match(event.request).then((response) => {
-                return response;
-            });
-        })
-    )
+    event.respondWith(handleFetch(event.request));
 });
+
+async function handleFetch(request) {
+    try {
+        return await fetch(request);
+    } catch(err) {
+        const res = await caches.match(request)
+        return res;
+    }
+}
